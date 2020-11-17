@@ -3,5 +3,9 @@
 require 'rack/test'
 
 RSpec.configure do |config|
-  config.include Rack::Test::Methods
+  config.before do |example|
+    config.include(Rack::Test::Methods)
+
+    Capybara.app = described_class
+  end
 end

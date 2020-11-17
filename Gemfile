@@ -12,6 +12,7 @@ group :development, :test do
 end
 
 group :test do
+  gem 'capybara'
   gem 'rack-test'
   gem 'rspec'
 end

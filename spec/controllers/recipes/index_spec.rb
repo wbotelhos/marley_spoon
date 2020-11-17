@@ -1,8 +1,8 @@
 # frozen_string_literal: true
 
-RSpec.describe Application, '#index' do
+RSpec.describe RecipesController, '#index' do
   def app
-    Application
+    RecipesController
   end
 
   it 'response ok' do

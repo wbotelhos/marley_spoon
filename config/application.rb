@@ -7,12 +7,8 @@ require 'sinatra/base'
 
 Bundler.require(:default, :development, :test)
 
-class Application < Sinatra::Base
-  get '/recipes' do
-    @recipes = contentful.entries(content_type: 'recipe')
-  end
+Dir['./app/**/*.rb'].each { |file| require file }
 
-  def contentful
-    @contentful ||= Contentful::Client.new(access_token: ENV['ACCESS_TOKEN'], space: ENV['SPACE'])
-  end
+class Application < Sinatra::Base
+  use ::RecipesController
 end

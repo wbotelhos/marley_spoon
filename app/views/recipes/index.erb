@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+
+<style>
+  .recipe__image {
+    float: left;
+    width: 100px;
+  }
+
+  .recipe__item {
+    float: left;
+    margin-top: 16px;
+    width: 100%;
+  }
+
+  .recipe__link {
+    display: block;
+    float: left;
+    font-size: 18px;
+    margin-left: 8px;
+    margin-top: 25px;
+    text-decoration: none;
+  }
+
+  .recipe__link:hover {
+    color: #0065e1;
+  }
+</style>
+
+<html>
+  <head>
+    <title>Recipes</title>
+  </head>
+  <body>
+    <h1>Recipes</h1>
+
+    <% @recipes.each do |recipe| %>
+      <div class="recipe__item">
+        <img alt="<%= recipe.title %>." class="recipe__image" src="<%= recipe.photo.url %>">
+
+        <a class="recipe__link" href="/recipes/<%= recipe.id %>"><%= recipe.title %></a>
+      </div>
+    <% end %>
+  </body>
+</html>
