@@ -1,0 +1,15 @@
+version: '3.8'
+
+services:
+  app:
+    build: .
+
+    environment:
+      CONTENTFUL_ACCESS_TOKEN:
+      CONTENTFUL_SPACE:
+      PUMA_MAX_THREADS:
+      PUMA_MIN_THREADS:
+      RACK_ENV:
+
+    ports:
+      - 9292:9292
