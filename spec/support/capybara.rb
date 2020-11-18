@@ -4,7 +4,9 @@ require 'capybara'
 require 'capybara/dsl'
 
 RSpec.configure do |config|
-  config.before(type: :feature) do |example|
-    config.include Capybara::DSL
+  config.before(type: :feature) do
+    config.include(Capybara::DSL)
+
+    Capybara.app = described_class
   end
 end

@@ -2,10 +2,16 @@
 
 require 'rack/test'
 
-RSpec.configure do |config|
-  config.before do |example|
-    config.include(Rack::Test::Methods)
+module RackTestMethods
+  include Rack::Test::Methods
 
-    Capybara.app = described_class
+  def app
+    described_class
+  end
+end
+
+RSpec.configure do |config|
+  config.before do
+    config.include(RackTestMethods)
   end
 end
