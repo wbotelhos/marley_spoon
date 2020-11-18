@@ -7,7 +7,7 @@ require 'sinatra/base'
 
 Bundler.require(:default, ENV['RACK_ENV'])
 
-Dir['./app/**/*.rb'].each { |file| require file }
+Dir['./app/**/*.rb'].sort.each { |file| require file }
 
 class Application < Sinatra::Base
   use ::RecipesController
