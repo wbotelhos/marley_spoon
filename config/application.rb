@@ -5,7 +5,7 @@ require 'contentful'
 require 'dotenv/load'
 require 'sinatra/base'
 
-Bundler.require(:default, :development, :test)
+Bundler.require(:default, ENV['RACK_ENV'])
 
 Dir['./app/**/*.rb'].each { |file| require file }
 
