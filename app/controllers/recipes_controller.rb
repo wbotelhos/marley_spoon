@@ -2,7 +2,7 @@
 
 class RecipesController < ApplicationController
   get '/recipes' do
-    @recipes = contentful.entries(content_type: 'recipe')
+    @recipes = Recipe.all
 
     erb :'recipes/index'
   end
