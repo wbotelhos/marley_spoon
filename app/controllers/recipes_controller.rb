@@ -2,13 +2,13 @@
 
 class RecipesController < ApplicationController
   get '/recipes' do
-    @recipes = Recipe.all
+    @recipes = RecipePresenter.wrap(Recipe.all)
 
     erb :'recipes/index'
   end
 
   get '/recipes/:id' do
-    @recipe = Recipe.find(params[:id])
+    @recipe = RecipePresenter.new(Recipe.find(params[:id]))
 
     erb :'recipes/show'
   end

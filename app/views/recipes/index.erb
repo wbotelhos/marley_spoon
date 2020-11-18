@@ -39,9 +39,9 @@
 
     <% @recipes.each do |recipe| %>
       <div class="recipe__item">
-        <img alt="<%= recipe.title %>." class="recipe__image" src="<%= recipe.photo.url %>">
+        <img alt="<%= recipe.title %>." class="recipe__image" src="<%= recipe.photo_url %>">
 
-        <a class="recipe__link" href="/recipes/<%= recipe.id %>"><%= recipe.title %></a>
+        <a class="recipe__link" href="<%= recipe.url %>"><%= recipe.title %></a>
       </div>
     <% end %>
   </body>
