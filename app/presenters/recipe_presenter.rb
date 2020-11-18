@@ -1,6 +1,12 @@
 # frozen_string_literal: true
 
 class RecipePresenter < SimpleDelegator
+  def by
+    return unless respond_to?(:chef)
+
+    "by #{chef.name}"
+  end
+
   def photo_url
     photo.url
   end

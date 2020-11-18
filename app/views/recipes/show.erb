@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+
+<style>
+  .breadcrumbs {
+    color: #555;
+    font-size: 14px;
+    letter-spacing: .5px
+    margin-left: 32px;
+  }
+
+  .breadcrumbs__item {
+    text-decoration: none;
+  }
+
+  .breadcrumbs__item--current {
+    color: #555;
+  }
+
+  .breadcrumbs__item:hover {
+    color: #0065e1;
+  }
+
+  .recipe__chef {
+    color: #dc5;
+    font-weight: bold;
+    margin: 4px auto 0;
+    text-align: center;
+  }
+
+  .recipe__description {
+    color: #333;
+    margin: 25px auto 0;
+    text-align: center;
+    width: 50%;
+  }
+
+  .recipe__image {
+    display: block;
+    margin: 0 auto;
+    width: 20%;
+  }
+
+  .recipe__tags {
+    color: green;
+    font-size: 15px;
+    font-weight: bold;
+    margin: 16px auto 0;
+    text-align: center;
+    width: 50%;
+  }
+
+  .recipe__title {
+    font-size: 23px;
+    margin-top: 25px;
+    text-align: center;
+  }
+</style>
+
+<html>
+  <head>
+    <title>Recipes</title>
+  </head>
+  <body>
+    <div class="breadcrumbs">
+      <a class="breadcrumbs__item" href="/recipes">Recipes</a> >
+      <span class="breadcrumbs__item--current"><%= @recipe.title %></span>
+    </div>
+
+    <h1 class="recipe__title"><%= @recipe.title %></h1>
+
+    <img alt="<%= @recipe.title %>." class="recipe__image" src="<%= @recipe.photo_url %>">
+
+    <div class="recipe__chef"><%= @recipe.by %></div>
+
+    <a class="recipe__link" href="<%= @recipe.url %>"></a>
+
+    <p class="recipe__description"><%= @recipe.description %></p>
+
+    <div class="recipe__tags"><%= @recipe.tags_names %></div>
+  </body>
+</html>
