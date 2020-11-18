@@ -8,11 +8,13 @@ gem 'puma'
 gem 'sinatra'
 
 group :development, :test do
-  gem 'pry-byebug'
+  gem 'pry-byebug', require: false
 end
 
 group :test do
-  gem 'capybara'
-  gem 'rack-test'
-  gem 'rspec'
+  gem 'capybara', require: false
+  gem 'rack-test', require: false
+  gem 'rspec', require: false
+  gem 'vcr', require: false
+  gem 'webmock', require: false
 end

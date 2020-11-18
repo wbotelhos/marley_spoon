@@ -8,6 +8,9 @@ class ApplicationController < Sinatra::Base
   protected
 
   def contentful
-    @contentful ||= Contentful::Client.new(access_token: ENV['ACCESS_TOKEN'], space: ENV['SPACE'])
+    @contentful ||= Contentful::Client.new(
+      access_token: ENV['CONTENTFUL__ACCESS_TOKEN'],
+      space:        ENV['CONTENTFUL__SPACE']
+    )
   end
 end

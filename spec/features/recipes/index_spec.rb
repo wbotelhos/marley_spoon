@@ -1,10 +1,13 @@
 # frozen_string_literal: true
 
 require 'support/capybara'
+require 'support/vcr'
 
 RSpec.describe RecipesController, '#index', type: :feature do
   it 'list all recipes' do
-    visit '/recipes'
+    VCR.use_cassette('recipes') do
+      visit '/recipes'
+    end
 
     # shows title
 
