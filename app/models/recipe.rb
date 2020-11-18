@@ -13,4 +13,8 @@ module Recipe
       space:        ENV['CONTENTFUL__SPACE']
     )
   end
+
+  def find(id)
+    contentful.entry(id)
+  end
 end
