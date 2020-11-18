@@ -2,7 +2,7 @@
 http_interactions:
 - request:
     method: get
-    uri: https://cdn.contentful.com/spaces/<CONTENTFUL__SPACE>/environments/master/entries?content_type=recipe
+    uri: https://cdn.contentful.com/spaces/<CONTENTFUL_SPACE>/environments/master/entries?content_type=recipe
     body:
       encoding: UTF-8
       string: ''
@@ -10,7 +10,7 @@ http_interactions:
       X-Contentful-User-Agent:
       - sdk contentful.rb/2.15.4; platform ruby/2.7.2; os macOS/19;
       Authorization:
-      - Bearer <CONTENTFUL__ACCESS_TOKEN>
+      - Bearer <CONTENTFUL_ACCESS_TOKEN>
       Content-Type:
       - application/vnd.contentful.delivery.v1+json
       Accept-Encoding:
@@ -47,7 +47,7 @@ http_interactions:
       Cf-Organization-Id:
       - 0OxgeKaTWSWzTukWE0scEe
       Cf-Space-Id:
-      - "<CONTENTFUL__SPACE>"
+      - "<CONTENTFUL_SPACE>"
       Content-Encoding:
       - gzip
       Content-Type:

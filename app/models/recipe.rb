@@ -9,8 +9,8 @@ module Recipe
 
   def contentful
     @contentful ||= Contentful::Client.new(
-      access_token: ENV['CONTENTFUL__ACCESS_TOKEN'],
-      space:        ENV['CONTENTFUL__SPACE']
+      access_token: ENV['CONTENTFUL_ACCESS_TOKEN'],
+      space:        ENV['CONTENTFUL_SPACE']
     )
   end
 
